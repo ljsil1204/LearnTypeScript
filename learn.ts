@@ -19,3 +19,12 @@ let isCompleted: boolean = true;
 
 // 타입 any => 모든 타입 대입 가능
 let anyValue: any = null;
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// 함수 타입
+// 반환값 타입 지정안해서 자동추론됨.
+function sum(a: number, b: number): number {
+  return a + b;
+}
+const result = sum(1, 2);
