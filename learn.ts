@@ -55,10 +55,18 @@ const answer = hello('world');
 const nullAnswer = hello('world', true);
 
 // 반환타입이 string | null 일때, 내장 함수 사용시 => 에러
-const repleaced = answer.replace('Hello', 'bye');
+// const repleaced = answer.replace('Hello', 'bye');
 
 // 에러 수정방법 => 1) null이 아닐때만 함수실행 2) 옵셔널 체이닝 연산자 사용 : ?
 if (answer !== null) {
   const repleaced1 = answer.replace('Hello', 'bye');
 }
 const repleaced2 = answer?.replace('Hello', 'bye');
+
+// 인터페이스 interface
+// 객체나 클래스 위한 타입 정할 때 사용
+interface Profile {
+  id: number;
+  username: string;
+  displayName: string;
+}
