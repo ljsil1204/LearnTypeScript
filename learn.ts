@@ -28,3 +28,37 @@ function sum(a: number, b: number): number {
   return a + b;
 }
 const result = sum(1, 2);
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// 옵셔널 파라미터 => 생략가능 파라미터
+function process(a: number, b: number, isDouble?: boolean) {
+  const sumResult = a + b;
+  return isDouble ? sumResult * 2 : sumResult;
+}
+
+// isDouble 타입 : boolean | undefined
+const total = process(1, 2);
+const doubleTotal = process(1, 2, true);
+
+// 여러 반환값 타입을 가진 함수
+// 타입 미리 명시 하지 않으면 => 반환값 자동 추론
+function hello(value1: String, returnNull?: boolean) {
+  if (returnNull) {
+    return null;
+  }
+  return `Hello ${value1}`;
+}
+
+// 함수 반환 타입 => string | null
+const answer = hello('world');
+const nullAnswer = hello('world', true);
+
+// 반환타입이 string | null 일때, 내장 함수 사용시 => 에러
+const repleaced = answer.replace('Hello', 'bye');
+
+// 에러 수정방법 => 1) null이 아닐때만 함수실행 2) 옵셔널 체이닝 연산자 사용 : ?
+if (answer !== null) {
+  const repleaced1 = answer.replace('Hello', 'bye');
+}
+const repleaced2 = answer?.replace('Hello', 'bye');
