@@ -70,3 +70,21 @@ interface Profile {
   username: string;
   displayName: string;
 }
+
+// 다른 interface 참조 가능
+interface RelationShip {
+  from: Profile;
+  to: Profile;
+}
+const relationShip: RelationShip = {
+  from: {
+    id: 1,
+    username: 'user1',
+    displayName: 'name1',
+  },
+  to: {
+    id: 2,
+    username: 'user2',
+    displayName: 'name2',
+  },
+};
