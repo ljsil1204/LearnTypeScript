@@ -131,3 +131,13 @@ const circle = new Circle(4);
 
 const area = circle.getArea();
 const perimeter = circle.getPerimeter();
+
+// 배열 타입
+const number: number[] = [1, 2, 3, 4, 5];
+const text: string[] = ['hello', 'world'];
+
+interface Person {
+  name: string;
+}
+
+const person: Person[] = [{name: 'jon'}, {name: 'nam'}];
