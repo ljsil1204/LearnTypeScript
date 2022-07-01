@@ -69,6 +69,7 @@ interface Profile {
   id: number;
   username: string;
   displayName: string;
+  photoURL?: string; // 옵셔널 속성
 }
 
 // 다른 interface 참조 가능
