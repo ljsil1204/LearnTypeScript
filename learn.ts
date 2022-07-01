@@ -88,3 +88,17 @@ const relationShip: RelationShip = {
     displayName: 'name2',
   },
 };
+
+// interface 상속
+interface Account extends Profile {
+  email: String;
+  password: String;
+}
+
+const account: Account = {
+  id: 1,
+  username: 'user1',
+  displayName: 'name1',
+  email: 'email',
+  password: 'test',
+};
