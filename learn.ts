@@ -103,3 +103,31 @@ const account: Account = {
   email: 'email',
   password: 'test',
 };
+
+// implements
+interface Shape {
+  getArea(): number;
+  getPerimeter(): number;
+}
+
+class Circle implements Shape {
+  constructor(private radius: number) {}
+  // constructor(private radius: number) {}와 같은 의미의 코드
+  // radius: number;
+  // constructor(radius: number) {
+  //   this.radius = radius;
+  // }
+
+  getArea(): number {
+    return Math.PI * Math.pow(this.radius, 2);
+  }
+
+  getPerimeter(): number {
+    return 2 * Math.PI * this.radius;
+  }
+}
+
+const circle = new Circle(4);
+
+const area = circle.getArea();
+const perimeter = circle.getPerimeter();
