@@ -141,3 +141,37 @@ interface Person {
 }
 
 const person: Person[] = [{name: 'jon'}, {name: 'nam'}];
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Type Alias => 타입에 별칭을 붙여주는 기능
+// 객체타입 =>  interface or type 선언 가능
+type Person1 = {
+  name: string;
+};
+
+const person1: Person1 = {
+  name: 'Jone',
+};
+
+//아래와 같은 타입은 type 문법으로만 선언 가능
+type People = Person1[];
+const people: People = [{name: 'jone'}];
+
+type Color = 'red' | 'orange' | 'yellow';
+const color: Color = 'red';
+
+//type 사용하여 만든 객체 타입에도 필드 추가 가능
+// & 를 사용.
+type Person2 = {
+  name: string;
+};
+
+type Employee = Person & {
+  job: string;
+};
+
+const empolyee: Employee = {
+  name: 'jin',
+  job: 'programmer',
+};
