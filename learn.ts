@@ -175,3 +175,25 @@ const empolyee: Employee = {
   name: 'jin',
   job: 'programmer',
 };
+
+///////////////////////////////////////////////////////////////////////////////////
+
+// Gemeric
+// <T> => Generic 이라고 함.
+// 사용하면 result2의 value 값이 string으로 추론됨.
+function wrap<T>(value1: T) {
+  return value1;
+}
+
+const result2 = wrap('Hello World');
+
+function wrap2<T>(value3: T) {
+  return {value3};
+}
+
+interface Student {
+  name: string;
+}
+
+const student: Student = {name: 'Jone'};
+const result3 = wrap2(student);
