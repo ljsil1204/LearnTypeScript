@@ -197,3 +197,34 @@ interface Student {
 
 const student: Student = {name: 'Jone'};
 const result3 = wrap2(student);
+
+// 객체에서 Generic 사용하기
+// interface
+interface Item<T> {
+  id: number;
+  data: T;
+}
+interface Person3 {
+  name: string;
+}
+
+interface Place {
+  location: string;
+}
+
+const personItem: Item<Person3> = {
+  id: 2,
+  data: {
+    name: 'jone',
+  },
+};
+
+const PlaceItem: Item<Place> = {
+  id: 2,
+  data: {
+    location: 'Korea',
+  },
+};
+
+// Type Alias
+type Item2<T> = {id: number; data: T};
