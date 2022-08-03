@@ -10,13 +10,17 @@
 
 import React from 'react';
 import {Text} from 'react-native';
+import MessageForm from './MessageForm';
 import Profile from './Profile';
 
 const App = () => {
   return (
-    <Profile name="jin">
-      <Text>Hellow World</Text>
-    </Profile>
+    <>
+      <Profile name="jin">
+        <Text>Hellow World</Text>
+      </Profile>
+      <MessageForm />
+    </>
   );
 };
 
