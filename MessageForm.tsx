@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {Button, Text, TextInput, View} from 'react-native';
 
 function MessageForm() {
@@ -7,21 +7,33 @@ function MessageForm() {
   //   const [text, setText] = useState<string>('');
   const [text, setText] = useState('');
   const [lastMessage, setLastMessage] = useState<{
+    id: number;
     message: string;
     date: Date;
   } | null>(null);
+  const nextId = useRef<number>(1);
+  const inputRef = useRef<TextInput | null>(null);
 
   const onPress = () => {
     setLastMessage({
+      id: nextId.current,
       message: text,
       date: new Date(),
     });
     setText('');
+    nextId.current += 1;
   };
+
+  useEffect(() => {
+    if (!inputRef.current) {
+      return;
+    }
+    inputRef.current.focus();
+  }, []);
 
   return (
     <View>
-      <TextInput value={text} onChangeText={setText} />
+      <TextInput value={text} onChangeText={setText} ref={inputRef} />
       <Button title="press" onPress={onPress} />
       {lastMessage && (
         <View>
