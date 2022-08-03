@@ -10,6 +10,7 @@
 
 import React from 'react';
 import {Text} from 'react-native';
+import Counter from './Counter';
 import MessageForm from './MessageForm';
 import Profile from './Profile';
 
@@ -20,6 +21,7 @@ const App = () => {
         <Text>Hellow World</Text>
       </Profile>
       <MessageForm />
+      <Counter />
     </>
   );
 };
